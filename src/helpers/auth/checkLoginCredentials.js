@@ -8,7 +8,6 @@ const checkLoginCredentials = (email, password, users) => {
   if (currentUser.length && currentUser[0].password === password) {
     credentialsChekResult = true;
   }
-  
 
   return {
     loginSuccess: credentialsChekResult,
@@ -17,5 +16,3 @@ const checkLoginCredentials = (email, password, users) => {
 };
 
 export default checkLoginCredentials;
-
-

@@ -41,8 +41,8 @@ const SinglePostPage = (props) => {
       <h1>Title: {post.title}</h1>
       <p>{post.body}</p>
       <h3>AuthorId: {post.userId}</h3>
-      <hr/>
-      <hr/>
+      <hr />
+      <hr />
 
       <h2>Comments</h2>
       <div></div>
@@ -52,8 +52,7 @@ const SinglePostPage = (props) => {
             <h4>{comment.name}</h4>
             <p>{comment.body}</p>
             <div> author: {comment.email}</div>
-	    <hr/>
-
+            <hr />
           </div>
         );
       })}

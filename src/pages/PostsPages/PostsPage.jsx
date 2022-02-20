@@ -35,7 +35,7 @@ const PostsPage = (props) => {
   }, [location]);
 
   useEffect(() => {
-    if (!isFetching ) return;
+    if (!isFetching) return;
     fetchMoreListItems();
   }, [isFetching]);
 
@@ -46,7 +46,7 @@ const PostsPage = (props) => {
       isFetching
     )
       return;
-      location !== routes.MY_POSTS_PAGE && setIsFetching(true);
+    location !== routes.MY_POSTS_PAGE && setIsFetching(true);
   }
 
   function fetchMoreListItems() {

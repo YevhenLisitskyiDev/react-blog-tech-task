@@ -11,7 +11,9 @@ const SignInPage = (props) => {
     password: "123",
   });
 
-  useEffect(() => {logout()},[])
+  useEffect(() => {
+    logout();
+  }, []);
 
   const changeUserData = (e) => {
     const eValue = e.target.value;

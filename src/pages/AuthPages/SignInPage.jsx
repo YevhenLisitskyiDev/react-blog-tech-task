@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import { useActions } from "../../hooks/useActions";
 import { Navigate } from "react-router-dom";
 
-
 const SignInPage = (props) => {
   const { register, logout } = useActions();
   const { message } = useSelector((state) => state.auth);
@@ -16,7 +15,9 @@ const SignInPage = (props) => {
     isAdmin: true,
   });
 
-  useEffect(() => {logout()},[])
+  useEffect(() => {
+    logout();
+  }, []);
 
   const changeUserData = (e) => {
     const eValue =
@@ -29,8 +30,8 @@ const SignInPage = (props) => {
 
     register(userData);
   };
-  let redirect = message === "User registered successfully" ? <Navigate to="/" /> : "";
-
+  let redirect =
+    message === "User registered successfully" ? <Navigate to="/" /> : "";
 
   return (
     <>
@@ -71,7 +72,6 @@ const SignInPage = (props) => {
           <input
             type="tel"
             pattern="[0-9]{10}"
-
             className="form-control"
             id="phoneNumber"
             value={userData.phoneNumber}
@@ -80,7 +80,6 @@ const SignInPage = (props) => {
             required
           />
           <small>Format: 0997773355</small>
-
         </div>
         <div className="form-group w-50 m-1" style={{ minWidth: "300px" }}>
           <label htmlFor="email">Email address*</label>

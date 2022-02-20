@@ -37,14 +37,13 @@ export const register = (user) => {
 
     if (emailIsUnique && phoneNumberIsUnique) {
       dispatch(registerSuccess(user));
-    } else if (!emailIsUnique && !phoneNumberIsUnique)
-    {  
+    } else if (!emailIsUnique && !phoneNumberIsUnique) {
       dispatch(
-      registerFail(
-        "User with this email and phone number already exists. Please choose another credentials"
-      )
-    );}
-    else if (!emailIsUnique && phoneNumberIsUnique)
+        registerFail(
+          "User with this email and phone number already exists. Please choose another ones."
+        )
+      );
+    } else if (!emailIsUnique && phoneNumberIsUnique)
       dispatch(
         registerFail(
           "User with this email already exists. Please choose another email."
@@ -60,7 +59,6 @@ export const register = (user) => {
 };
 
 // -------LOGIN ACTIONS-------
-
 
 export const LoginStarted = () => {
   return {
@@ -92,13 +90,11 @@ export const login = (email, password, users) => {
       users
     );
 
-    
     loginSuccess
       ? dispatch(LoginSuccess(currentUser))
       : dispatch(LoginFail("Wrong login credentials"));
   };
 };
-
 
 export const logout = () => {
   return {
@@ -106,15 +102,11 @@ export const logout = () => {
   };
 };
 
-
 // -------SET USERS ACTIONS-------
-
 
 export const FetchUsers = (users) => {
   return {
     type: authActionsTypes.FETCH_USERS,
-    payload: users
+    payload: users,
   };
 };
-
-

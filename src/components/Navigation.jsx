@@ -13,8 +13,8 @@ import { useSelector } from "react-redux";
 import { useActions } from "../hooks/useActions";
 import privateRoutes from "../routes/privateRoutes";
 
-const Navigation = () => { 
-  const {currentUser, users} = useSelector((state) => state.auth);
+const Navigation = () => {
+  const { currentUser, users } = useSelector((state) => state.auth);
   const { logout } = useActions();
 
   let location = useLocation().pathname;
@@ -40,12 +40,12 @@ const Navigation = () => {
     <div>
       {redirect}
 
-      <Navbar color="light"  light expand="md">
+      <Navbar color="light" light expand="md">
         <NavbarBrand to="/">React Blog Tech Task</NavbarBrand>
         <NavbarToggler onClick={toggle} />
-        <Collapse  isOpen={isOpen} navbar>
+        <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto " navbar>
-              <NavItem>
+            <NavItem>
               <NavLink
                 className={"nav-link"}
                 activeClassName={"font-weight-bold "}

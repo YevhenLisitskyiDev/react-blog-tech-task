@@ -1,6 +1,4 @@
-import "./App.css";
 import Router from "./routes/Router";
-import privateRouted from "./routes/privateRoutes";
 import Navigation from "./components/Navigation";
 import { useEffect } from "react";
 import { useActions } from "./hooks/useActions";
@@ -37,7 +35,6 @@ function App() {
         });
       })
       .then((users) => {
-        console.log(users, defaultUser)
         let allUsers = [...users, defaultUser];
         FetchUsers(allUsers);
       })
